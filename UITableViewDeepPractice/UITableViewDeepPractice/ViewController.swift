@@ -29,7 +29,9 @@ class ViewController: UITableViewController {
   private func setNavi() {
     navigationItem.title = "Contacts"
     navigationController?.navigationBar.prefersLargeTitles = true
-    
+    navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Show IndexPath", style: .plain, target: self, action: #selector(handleShowIndexPath))
+
+
   }
   
   //MARK: - setUI()
@@ -60,6 +62,12 @@ class ViewController: UITableViewController {
     cell.textLabel?.text = name
     cell.textLabel?.text = "\(name) Section : \(indexPath.section) Row : \(indexPath.row)"
     return cell
+  }
+  
+  //MARK: - @objc func
+  @objc func handleShowIndexPath() {
+    let indexPath = IndexPath(row: 0, section: 0)
+    tableView.reloadRows(at: [indexPath], with: .left)
   }
 }
 

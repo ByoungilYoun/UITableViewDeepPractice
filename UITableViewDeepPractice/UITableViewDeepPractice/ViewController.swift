@@ -66,8 +66,14 @@ class ViewController: UITableViewController {
   
   //MARK: - @objc func
   @objc func handleShowIndexPath() {
-    let indexPath = IndexPath(row: 0, section: 0)
-    tableView.reloadRows(at: [indexPath], with: .left)
+    // build all the indexPaths we want to reload
+    var indexPathsToReload = [IndexPath]()
+    
+    for index in twoDimensionalArray[0].indices {
+      let indexPath = IndexPath(row: index, section: 0)
+      indexPathsToReload.append(indexPath)
+    }
+    tableView.reloadRows(at: indexPathsToReload, with: .left)
   }
 }
 

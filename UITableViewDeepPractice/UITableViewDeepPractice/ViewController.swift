@@ -18,6 +18,9 @@ class ViewController: UITableViewController {
     [ "Dave", "Dan"],
     ["Patrick", "Patty"]
   ]
+  
+  var showIndexPath = false
+  
   //MARK: - LifeCycle
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -60,7 +63,11 @@ class ViewController: UITableViewController {
     
     let name = twoDimensionalArray[indexPath.section][indexPath.row]
     cell.textLabel?.text = name
-    cell.textLabel?.text = "\(name) Section : \(indexPath.section) Row : \(indexPath.row)"
+    
+    if showIndexPath {
+      cell.textLabel?.text = "\(name) Section : \(indexPath.section) Row : \(indexPath.row)"
+    }
+   
     return cell
   }
   
@@ -76,7 +83,12 @@ class ViewController: UITableViewController {
         indexPathsToReload.append(indexPath)
       }
     }
-    tableView.reloadRows(at: indexPathsToReload, with: .left)
+    
+    showIndexPath = !showIndexPath
+    
+    let animationStyle = showIndexPath ? UITableView.RowAnimation.right : .left
+    
+    tableView.reloadRows(at: indexPathsToReload, with: animationStyle)
   }
 }
 

@@ -12,7 +12,7 @@ class ViewController: UITableViewController {
   
   let cellId = "cellId"
   
-  let twoDimensionalArray = [
+  var twoDimensionalArray = [
     [ "Amy", "Jack", "Jimmy", "Steve", "Youn", "Karlo", "John"],
     ["Carl", "Chris", "Christain", "Catalina"],
     [ "Dave", "Dan"],
@@ -44,10 +44,25 @@ class ViewController: UITableViewController {
   //MARK: - UITableViewDataSource
   
   override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-    let label = UILabel()
-    label.text = "Header"
-    label.backgroundColor = UIColor.lightGray
-    return label
+    let button = UIButton(type: .system)
+    button.setTitle("Close", for: .normal)
+    button.backgroundColor = .yellow
+    button.setTitleColor(.black, for: .normal)
+    button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+    button.addTarget(self, action: #selector(handleExpandClose), for: .touchUpInside)
+    button.tag = section
+    return button
+    
+    
+    
+//    let label = UILabel()
+//    label.text = "Header"
+//    label.backgroundColor = UIColor.lightGray
+//    return label
+  }
+  
+  override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    return 34
   }
   
   override func numberOfSections(in tableView: UITableView) -> Int {
@@ -89,6 +104,20 @@ class ViewController: UITableViewController {
     let animationStyle = showIndexPath ? UITableView.RowAnimation.right : .left
     
     tableView.reloadRows(at: indexPathsToReload, with: animationStyle)
+  }
+  
+  @objc func handleExpandClose(button : UIButton) {
+    // try to close the section first by deleting the rows
+    
+    let section = button.tag
+    var indexPaths = [IndexPath]()
+    
+    for row in twoDimensionalArray[section].indices {
+      let indexPath = IndexPath(row: row, section: section)
+      indexPaths.append(indexPath)
+    }
+    twoDimensionalArray[section].removeAll()
+    tableView.deleteRows(at: indexPaths, with: .fade)
   }
 }
 

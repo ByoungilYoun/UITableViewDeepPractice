@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F3026B525221F65004CC611 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3026B425221F65004CC611 /* ContactCell.swift */; };
 		0F5292C0251C871F00CEA2D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5292BF251C871F00CEA2D8 /* AppDelegate.swift */; };
 		0F5292C4251C871F00CEA2D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5292C3251C871F00CEA2D8 /* ViewController.swift */; };
 		0F5292C9251C872100CEA2D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F5292C8251C872100CEA2D8 /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F3026B425221F65004CC611 /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
 		0F5292BC251C871F00CEA2D8 /* UITableViewDeepPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UITableViewDeepPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F5292BF251C871F00CEA2D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F5292C3251C871F00CEA2D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			children = (
 				0F5292BF251C871F00CEA2D8 /* AppDelegate.swift */,
 				0F5292C3251C871F00CEA2D8 /* ViewController.swift */,
+				0F3026B425221F65004CC611 /* ContactCell.swift */,
 				0F5292D8251D0DF300CEA2D8 /* ExpandableNames.swift */,
 				0F5292C8251C872100CEA2D8 /* Assets.xcassets */,
 				0F5292CA251C872100CEA2D8 /* LaunchScreen.storyboard */,
@@ -133,6 +136,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F3026B525221F65004CC611 /* ContactCell.swift in Sources */,
 				0F5292D9251D0DF300CEA2D8 /* ExpandableNames.swift in Sources */,
 				0F5292C4251C871F00CEA2D8 /* ViewController.swift in Sources */,
 				0F5292C0251C871F00CEA2D8 /* AppDelegate.swift in Sources */,

@@ -39,7 +39,7 @@ class ViewController: UITableViewController {
   
   //MARK: - setUI()
   private func setUI() {
-    tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+    tableView.register(ContactCell.self, forCellReuseIdentifier: cellId)
   }
   //MARK: - UITableViewDataSource
   
